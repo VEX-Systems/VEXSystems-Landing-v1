@@ -1,0 +1,32 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Jakub",
+      "aka": ["vLoud", "l1806"],
+      "role": "CEO & Founder",
+      "bio": "Founder of VEX Systems. 8+ years in coding experience, working on fullstack applications and designing simple logos and interfaces with a focus on user experience and simplicity.",
+      "avatarLink": "https://avatars.githubusercontent.com/u/220633171?v=4"
+    },
+    {
+      "id": 2,
+      "name": "Dominik",
+      "aka": ["vf3x"],
+      "role": "CTO & Co-Founder",
+      "bio": "Co-Founder of VEX Systems. Focusing on creating designs that are both functional and aesthetically pleasing.",
+      "avatarLink": "https://avatars.githubusercontent.com/u/69921660?v=4"
+    },
+    {
+      "id": 3,
+      "name": "Kosma",
+      "aka": ["mayeraneqdev", "majezan"],
+      "role": "Developer",
+      "bio": "Fullstack Developer. Focusing on creating efficient and scalable applications, also passionate about creating music.",
+      "avatarLink": "https://avatars.githubusercontent.com/u/249946081?v=4"
+    }
+  ],
+  "socials": {
+    "github": "https://github.com/VEX-Systems",
+    "discord": "https://discord.gg/JzuJfP7UDr"
+  }
+}
