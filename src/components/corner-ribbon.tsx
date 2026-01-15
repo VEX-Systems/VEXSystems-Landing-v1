@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export function CornerRibbon() {
   return (
-    <div className="fixed bottom-0 right-0 z-50 w-56 h-56 overflow-hidden pointer-events-none">
+    <div className="fixed bottom-0 right-0 z-50 w-56 h-56 overflow-hidden pointer-events-none hidden lg:block">
       <div className="absolute bottom-[45px] right-[-65px] w-[320px] h-10 bg-black dark:bg-white text-white dark:text-black flex items-center shadow-lg -rotate-45 pointer-events-auto cursor-pointer hover:scale-105 transition-transform">
         <a href="mailto:hello@vex.systems" className="w-full h-full flex items-center overflow-hidden">
             <motion.div

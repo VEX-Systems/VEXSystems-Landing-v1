@@ -147,7 +147,7 @@ export default function VexScene() {
   if (!mounted) return null;
 
   return (
-    <div className="w-full h-screen bg-white dark:bg-black text-black dark:text-white flex items-center justify-center gap-16 font-sans transition-colors duration-300 overflow-hidden relative">
+    <div className="w-full min-h-screen bg-white dark:bg-black text-black dark:text-white flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 font-sans transition-colors duration-300 overflow-y-auto relative py-20 lg:py-0">
       <ModeToggle />
       
       <div className="fixed top-4 left-4 z-50">
@@ -186,7 +186,7 @@ export default function VexScene() {
 
       <CornerRibbon />
       <div className="flex flex-col items-center gap-6">
-        <div className="w-[400px] h-[400px]">
+        <div className="w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] flex-shrink-0">
             <Scene3D />
         </div>
         <div className="flex gap-4">
@@ -228,7 +228,7 @@ export default function VexScene() {
          </div>
       </div>
       
-      <div className="flex flex-col text-black dark:text-white relative w-[400px] h-[300px]">
+      <div className="flex flex-col text-black dark:text-white relative w-full max-w-[400px] h-[450px] lg:h-auto lg:min-h-[300px]">
         <AnimatePresence mode="wait">
           {activeSection === 'intro' && (
             <motion.div
@@ -237,11 +237,11 @@ export default function VexScene() {
               exit={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto no-scrollbar px-4 lg:px-0 lg:relative lg:h-auto lg:overflow-visible"
             >
-              <h1 className="text-6xl font-bold tracking-tighter mb-2">VEX Systems</h1>
+              <h1 className="text-4xl lg:text-6xl font-bold tracking-tighter mb-2">VEX Systems</h1>
               <div className="mb-8 relative w-fit">
-                <p className="text-xl text-gray-500 dark:text-gray-400 font-light tracking-wide whitespace-nowrap">
+                <p className="text-lg lg:text-xl text-gray-500 dark:text-gray-400 font-light tracking-wide whitespace-nowrap">
                     {t.title1} <span className="relative inline-block mx-1 text-black dark:text-white">
                         {t.title2}
                         <svg className="absolute left-1/2 -translate-x-1/2 top-[85%] w-[120%] h-6 text-black dark:text-white pointer-events-none opacity-80" viewBox="0 0 120 20" preserveAspectRatio="none">
@@ -298,7 +298,7 @@ export default function VexScene() {
                     <span className="text-lg font-medium cursor-default">
                         {t.ourTeam}
                     </span>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                         {teamMembers.map((member) => (
                             <div key={member.id} className="relative group">
                                 <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black dark:bg-white text-white dark:text-black text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap mb-2 shadow-lg z-10">
@@ -330,14 +330,14 @@ export default function VexScene() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 20, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto no-scrollbar px-4 lg:px-0 lg:relative lg:h-auto lg:overflow-visible"
             >
-              <h2 className="text-3xl font-bold tracking-tight mb-4">{t.aboutUsTitle}</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">{t.aboutUsTitle}</h2>
+              <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 {t.aboutUsDesc}
               </p>
               
-              <button 
+              <button  
                 onClick={() => setActiveSection('intro')}
                 className="text-sm font-medium text-gray-500 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"
               >
@@ -354,10 +354,10 @@ export default function VexScene() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 20, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto no-scrollbar px-4 lg:px-0 lg:relative lg:h-auto lg:overflow-visible"
             >
-              <h2 className="text-3xl font-bold tracking-tight mb-4">{t.projectsTitle}</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">{t.projectsTitle}</h2>
+              <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 {t.projectsDesc}
               </p>
               
@@ -406,9 +406,9 @@ export default function VexScene() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 20, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto no-scrollbar px-4 lg:px-0"
             >
-              <h2 className="text-3xl font-bold tracking-tight mb-8">{t.contact}</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-8">{t.contact}</h2>
               
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
@@ -446,26 +446,26 @@ export default function VexScene() {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 20, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 left-0 w-full"
+              className="absolute top-0 left-0 w-full h-full overflow-y-auto no-scrollbar px-4 lg:px-0"
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center text-xl font-bold overflow-hidden border-2 border-black dark:border-neutral-500">
                     <img src={selectedMember.avatarLink} alt={selectedMember.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                    <h2 className="text-2xl font-bold tracking-tight">{selectedMember.name}</h2>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">{selectedMember.role}</p>
+                    <h2 className="text-xl lg:text-2xl font-bold tracking-tight">{selectedMember.name}</h2>
+                    <p className="text-xs lg:text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">{selectedMember.role}</p>
                     {selectedMember.aka && selectedMember.aka.length > 0 && (
                         <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">aka {selectedMember.aka.join(', ')}</p>
                     )}
                 </div>
               </div>
               
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+              <p className="text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 {selectedMember.bio}
               </p>
               
-              <p className="text-sm text-yellow-600 dark:text-yellow-400 font-medium italic mb-6 flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900/30 p-2 rounded">
+              <p className="text-xs lg:text-sm text-yellow-600 dark:text-yellow-400 font-medium italic mb-6 flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900/30 p-2 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 {t.translationWip}
               </p>
@@ -481,7 +481,7 @@ export default function VexScene() {
           )}
         </AnimatePresence>
       </div>
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-gray-400 dark:text-gray-600 font-mono tracking-tight flex items-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+      <div className="absolute bottom-4 left-0 w-full text-xs text-gray-400 dark:text-gray-600 font-mono tracking-tight flex flex-wrap items-center justify-center gap-1 opacity-60 hover:opacity-100 transition-opacity px-4 text-center">
         {t.madeWith} <span className="text-pink-500">♥</span> {t.by} - VEX Systems (2025-{new Date().getFullYear()})
       </div>
     </div>
